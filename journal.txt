@@ -1,0 +1,32 @@
+*2012.11.29 22:44:29 complete
+requested [2012.11.29 22:21:00] 
+only on links
+otherwise easy to think you've linked when you haven't
+
+*2012.11.29 22:44:32 complete
+requested [2012.11.29 22:20:40] 
+no auto alphabetize... should be up to user...
+easier to get to first items 
+
+*2012.11.29 22:43:39 
+updates deployed...
+seem to work just fine!
+very cool
+
+*2012.11.29 22:24:13 
+few updates...
+need to republish
+zip -r link_router-20121129-0.2.zip link_router
+
+*2012.11.29 17:36:20 
+https://chrome.google.com/webstore/developer/dashboard
+
+*2012.11.29 17:32:23 
+https://chrome.google.com/webstore/detail/link-router/mniabhjoaeegihknhoibknnfnidgnecp
+
+*2012.11.29 17:23:25 
+writing description
+
+*2012.11.29 17:20:30 
+Link Router uses Chrome's context menu (right click menu) to tag a link with a tag specified in the menu.  The available tags in the menu are configured in the extension's option page.  Previously tagged links are also visible on the options page, where they can be copied and pasted to other destinations. 
+

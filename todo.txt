@@ -1,3 +1,9 @@
 *2012.12.04 18:58:22 
 publish link router browser extension as its own repository
 
+*2012.11.29 18:05:11 link_router
+could consider
+allow up to 8 options in cardinal directions 
+(more as standard right click list)
+
+
