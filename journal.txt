@@ -1,3 +1,5 @@
+http://developer.chrome.com/extensions/getstarted.html
+
 *2012.11.29 22:44:29 complete
 requested [2012.11.29 22:21:00] 
 only on links

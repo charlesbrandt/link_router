@@ -1,7 +1,7 @@
 {
     "name": "Link Router",
-    "version": "0.2",
-    "manifest_version": 2,
+    "version": "0.3",
+    "manifest_version": 3,
     "description": "Route links on any given page to the main log with a certain tag",
 
     "background": {

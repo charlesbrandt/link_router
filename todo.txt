@@ -1,3 +1,9 @@
+*2013.05.09 19:17:57 
+show current time on page (with seconds)
+
+*2013.05.09 19:17:37 
+dynamically update page if loaded
+
 *2012.12.04 18:58:22 
 publish link router browser extension as its own repository
 

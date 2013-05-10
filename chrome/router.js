@@ -52,6 +52,7 @@ function generateMoment(info, tab) {
     entry += buffer;
     localStorage["moments"] = entry;
 
+    restore_moments();
 }
 
 function updateMenu() {

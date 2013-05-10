@@ -64,6 +64,17 @@ function restore_moments() {
     select.value = moment_options;
 }
 
+function update_options(e) {
+    if (!e) { e = window.event; }
+    console.log("update_options called");
+}
+
+function update_time() {
+    document.getElementById("time").innerHTML = moment().format('YYYY.MM.DD HH:mm:ss');
+    //console.log(moment().format('hh:mm:ss a'));
+}
+
+window.setInterval(function(){update_time()}, 1000);
 
 //document.addEventListener('DOMContentReady', console.log("CONTENT READY"));
 document.addEventListener('DOMContentReady', restore_options());
@@ -71,4 +82,11 @@ document.querySelector('#save').addEventListener('click', save_options);
 
 document.addEventListener('DOMContentReady', restore_moments());
 document.querySelector('#entrysave').addEventListener('click', save_moments);
+
+//trying to trigger the update after a storage event...
+//can't seem to get it: 
+//document.addEventListener('storage', update_options, false);
+//http://diveintohtml5.info/storage.html
+//http://dev.w3.org/html5/webstorage/#storage-0
+
 //save_options();
