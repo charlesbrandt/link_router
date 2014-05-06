@@ -1,3 +1,4 @@
+
 //one, four, two, five, three
 
 //test = [ "one", "two", "test", "alpha" ];
@@ -56,53 +57,64 @@ function generateMoment(info, tab) {
 }
 
 function updateMenu() {
-    // could loop over menu_map here for remove
-    // but removeAll should be sufficient:
-    chrome.contextMenus.removeAll();
-    //clear global map
-    menu_map = {};
+  // could loop over menu_map here for remove
+  // but removeAll should be sufficient:
+  chrome.contextMenus.removeAll();
+  //clear global map
+  menu_map = {};
 
-    var tag_string = localStorage["tags"];
-    var tags_pre = tag_string.split(',');
-    //console.log("router tags_pre: ");
-    //console.log(typeof tags_pre);
-    //console.log(tags_pre);
+  var tag_string = localStorage["tags"];
 
-    var tags = [];
-    //strip any extra whitespace:
-    if (tags_pre) {
-        for (var i = 0; i < tags_pre.length; i++) {
-            var tag = tags_pre[i];
-            //console.log("Checking tag: " + tag)
-            if (tag) {
-                tags.push(strip(tag));
-            };
-
-        }
-    };
-    //console.log("router Tags: ");
-    //console.log(typeof tags);
-
-    if (tags) {
-	//this will alphabetize the tags, but that doesn't seem to be ideal
-	//better to have highest priority items first
-        //tags.sort();
-
-        //console.log(tags);
-
-        for (var i = 0; i < tags.length; i++) {
-            var tag = tags[i];
-            var title = tag;
-	    //making context options available for all contexts is tricky...
-	    //easy to think you're clicking on a link when you're not
-            //var id = chrome.contextMenus.create({"title": title, "onclick": generateMoment, "contexts": ["link","page","selection","image","video","audio"]});
-            var id = chrome.contextMenus.create({"title": title, "onclick": generateMoment, "contexts": ["link"]});
-            //console.log("'" + tag + "' item:" + id);
-            menu_map[id] = tag;
-            //console.log(menu_map);
-        }
-	//localStorage["menu_map"] = menu_map;
-    };
+  var tags_pre;
+  if (tag_string) {
+    tags_pre = tag_string.split(',');
+  }
+  else {
+    //want to make sure something shows up initially,
+    //so users know the extension was actually installed
+    tags_pre = "change,these,in,extension,options".split(',');
+  }
+  
+  //var tags_pre = tag_string.split(',');
+  //console.log("router tags_pre: ");
+  //console.log(typeof tags_pre);
+  //console.log(tags_pre);
+  
+  var tags = [];
+  //strip any extra whitespace:
+  if (tags_pre) {
+    for (var i = 0; i < tags_pre.length; i++) {
+      var tag = tags_pre[i];
+      //console.log("Checking tag: " + tag)
+      if (tag) {
+        tags.push(strip(tag));
+      };
+      
+    }
+  };
+  //console.log("router Tags: ");
+  //console.log(typeof tags);
+  
+  if (tags) {
+    //this will alphabetize the tags, but that doesn't seem to be ideal
+    //better to have highest priority items first
+    //tags.sort();
+    
+    //console.log(tags);
+    
+    for (var i = 0; i < tags.length; i++) {
+      var tag = tags[i];
+      var title = tag;
+      //making context options available for all contexts is tricky...
+      //easy to think you're clicking on a link when you're not
+      //var id = chrome.contextMenus.create({"title": title, "onclick": generateMoment, "contexts": ["link","page","selection","image","video","audio"]});
+      var id = chrome.contextMenus.create({"title": title, "onclick": generateMoment, "contexts": ["link"]});
+      //console.log("'" + tag + "' item:" + id);
+      menu_map[id] = tag;
+      //console.log(menu_map);
+    }
+    //localStorage["menu_map"] = menu_map;
+  };
 }
 
 updateMenu();

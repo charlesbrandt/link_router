@@ -1,3 +1,28 @@
+*2014.05.06 08:50:55 publish
+cd /c/link_router/chrome 
+zip -r ../releases/link_router-20140506-0.3.zip *
+
+then go to:
+https://chrome.google.com/webstore/developer/dashboard
+
+and upload it there.
+
+*2014.05.06 08:48:40 complete
+these changes were completed shortly after the request,
+but they were never published to the google play store
+others could not see the update.
+just attempted a publish now
+
+also set some default values to tags value in options if none is set...
+without that, nothing shows up in the right click menu and new users may think that nothing happened
+
+requested [2013.05.09 19:17:57] 
+show current time on page (with seconds)
+
+requested [2013.05.09 19:17:37] 
+dynamically update page if loaded
+
+*2014.05.06 08:50:39
 http://developer.chrome.com/extensions/getstarted.html
 
 *2012.11.29 22:44:29 complete

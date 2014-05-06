@@ -23,15 +23,17 @@ function save_options() {
 
 // Restores select box state to saved value from localStorage.
 function restore_options() {
-    //console.log("restore_options called")
-    var tag_options = localStorage["tags"];
-    //console.log("tag_options: " + tag_options)
-    if (!tag_options) {
-	return;
-    }
-    var select = document.getElementById("tags");
-    //console.log("setting select to: " + tag_options );
-    select.value = tag_options;
+  //console.log("restore_options called")
+  var tag_options = localStorage["tags"];
+  //console.log("tag_options: " + tag_options)
+  if (!tag_options) {
+    //tag_options = "change,these,in,extension,options";
+    return;
+  }
+  var select = document.getElementById("tags");
+  //console.log("setting select to: " + tag_options );
+  select.value = tag_options;
+
 }
 
 function save_moments() {
@@ -74,6 +76,13 @@ function update_time() {
     //console.log(moment().format('hh:mm:ss a'));
 }
 
+function initialize() {
+  // helper for starting things up correctly
+  restore_options();
+  save_options();
+  restore_moments();
+}
+
 window.setInterval(function(){update_time()}, 1000);
 
 //document.addEventListener('DOMContentReady', console.log("CONTENT READY"));
@@ -82,6 +91,10 @@ document.querySelector('#save').addEventListener('click', save_options);
 
 document.addEventListener('DOMContentReady', restore_moments());
 document.querySelector('#entrysave').addEventListener('click', save_moments);
+
+//document.addEventListener('DOMContentReady', initialize());
+//initialize();
+//chrome.runtime.onInstalled.addListener(initialize);
 
 //trying to trigger the update after a storage event...
 //can't seem to get it: 
