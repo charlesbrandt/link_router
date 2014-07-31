@@ -1,3 +1,6 @@
+*2014.07.31 18:21:39
+fresh checkout from github seems to fix push issues
+
 *2014.07.31 17:06:21 complete
 this was done a while ago, but just finished adding it to github
 
